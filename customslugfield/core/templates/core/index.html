@@ -1,13 +1,24 @@
+{% extends "core/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>django-custom-slug-field</h1>
-</body>
-</html>
+{% block page_title %}
+    <title>Index</title>
+{% endblock page_title %}
+
+{% block content %}
+    <div class="text-center">
+        <h1>django-custom-slug-field</h1>
+        <hr>
+        {% if test_data %}
+            <div class="list-group">
+                {% for item in test_data %}
+                    <a href="{% url 'detail_view' item.slug %}" class="list-group-item list-group-item-action">
+                        {{ item.name }}
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No data found.</p>
+        {% endif %}
+    </div>
+{% endblock content %}

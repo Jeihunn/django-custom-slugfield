@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block page_title %}
+    <title>Detail</title>
+{% endblock page_title %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ test_data }}</h1>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><strong>Description:</strong> {{ test_data.description }}</p>
+            <p class="card-text"><strong>Slug:</strong> {{ test_data.slug }}</p>
+            <p class="card-text"><strong>Updated at:</strong> {{ test_data.updated_at }}</p>
+            <p class="card-text"><strong>Created at:</strong> {{ test_data.created_at }}</p>
+            <a href="{% url 'index_view' %}" class="btn btn-primary mt-3">Back to Index</a>
+        </div>
+    </div>
+{% endblock content %}

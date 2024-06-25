@@ -9,4 +9,4 @@ from . import models
 @admin.register(models.TestModel)
 class TestModelAdmin(admin.ModelAdmin):
     list_display = ("name", "slug", "updated_at", "created_at")
-    readonly_fields = ("slug",)
+    readonly_fields = ("slug", "updated_at", "created_at")

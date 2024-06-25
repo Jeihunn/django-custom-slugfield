@@ -18,7 +18,7 @@ class TestModel(models.Model):
     slug = CustomSlugField(
         verbose_name=_("Slug"),
         source_field="name",
-        overwrite=True,
+        # overwrite=True,
         symbol_mapping="default",
         unique=True,
         editable=False,

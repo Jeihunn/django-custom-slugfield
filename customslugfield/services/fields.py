@@ -4,7 +4,6 @@ from django.db import models
 from django.core import checks
 from django.core.exceptions import FieldDoesNotExist
 from django.utils.text import slugify
-from django.utils.translation import gettext_lazy as _
 
 
 class CustomSlugField(models.SlugField):

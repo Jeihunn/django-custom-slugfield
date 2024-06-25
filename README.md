@@ -15,7 +15,7 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
 ## 🛠️ Usage
 
 1. Add the field to your project:
-    To use the CustomSlugField class provided by the django-custom-slug-field package, you need to add it to a file in your project. You can name this file anything you like, for example, fields.py:
+    To use the CustomSlugField class provided by the django-custom-slug-field repo, you need to add it to a file in your project. You can name this file anything you like, for example, `services/fields.py`:
 
     ```python
     import uuid
@@ -34,19 +34,37 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
 
     ```python
     from django.db import models
-    from .fields import CustomSlugField 
+    from services.fields import CustomSlugField 
 
     class MyModel(models.Model):
         title = models.CharField(max_length=255)
-        slug = CustomSlugField(source_field='title', unique=True)
+        slug = CustomSlugField(
+            source_field="title",
+            symbol_mapping="default",
+            unique=True,
+            editable=False,
+        )
+    ```
+
+3. Setting Up in Django Admin:
+    To utilize CustomSlugField in the Django admin interface, include it in your `admin.py` file for the respective app. Here’s an example of how you can register `MyModel` with the CustomSlugField in the admin interface:
+
+    ```python
+    from django.contrib import admin
+    from .models import MyModel
+
+    @admin.register(models.MyModel)
+    class MyModelAdmin(admin.ModelAdmin):
+        list_display = ("title", "slug")
+        readonly_fields = ("slug",)
     ```
 
 ## 🔧 Additional Options
 
-- **source_field** (*str*): The name of the model field to use as the source for slug generation. This field should be a CharField or TextField.
-- **overwrite** (*bool*): If True, the slug will be regenerated and overwritten each time the model instance is saved. Defaults to False.
-- **symbol_mapping** (*list, optional*): A list of tuples defining custom symbol replacements for slug generation. Each tuple should be in the form (symbol, replacement). If "default" is specified, a predefined mapping for common Azerbaijani characters will be used.
-- **allow_manual** (*bool*): If True, the slug field will accept manual input. When set to True, the source_field, overwrite, and symbol_mapping options will have no effect. Defaults to False.
+- `source_field` (*str*): The name of the model field to use as the source for slug generation. This field should be a CharField or TextField.
+- `overwrite` (*bool*): If True, the slug will be regenerated and overwritten each time the model instance is saved. Defaults to False.
+- `symbol_mapping` (*list, optional*): A list of tuples defining custom symbol replacements for slug generation. Each tuple should be in the form (symbol, replacement). If "default" is specified, a predefined mapping for common Azerbaijani characters will be used.
+- `allow_manual` (*bool*): If True, the slug field will accept manual input. When set to True, the source_field, overwrite, and symbol_mapping options will have no effect. Defaults to False.
 
 ## 💡 Example with Symbol Mapping
 
@@ -67,11 +85,11 @@ class Product(models.Model):
     )
 ```
 
-In this example, a product with the name "**Cool Product @ #1**" will have the slug "**cool-product-at-hash1**".
+In this example, a product with the name "**Cool Product @ #1**" will have the slug "***cool-product-at-hash1***".
 
 ## 🎥 Video Tutorial
 
-For a detailed walkthrough on using CustomSlugField in your Django projects, check out our video tutorial:
+For a detailed explanation of using CustomSlugField in your Django projects, check out my video tutorial:
 
 [![CustomSlugField Tutorial](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
 
@@ -81,10 +99,15 @@ In this video, you'll learn:
 - Customization options such as symbol mapping and manual input control.
 - Best practices for optimizing SEO-friendly URLs with CustomSlugField.
 
+## 📚 Medium Article
+
+For an extensive overview of CustomSlugField and practical usage tips, explore my Medium article:
+[Creating a Custom Slug Field in Django: Implementation and Usage of CustomSlugField](https://medium.com/@jeihunpiriyev/django-da-xüsusi-slug-sahəsi-yaratmaq-customslugfield-in-tətbiqi-və-i̇stifadəsi-c2aeb3461374)
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙌 Contributing
+## 🤝 Contributing
 
 Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request on GitHub.

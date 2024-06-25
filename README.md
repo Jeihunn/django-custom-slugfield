@@ -91,7 +91,7 @@ In this example, a product with the name "**Cool Product @ #1**" will have the s
 
 For a detailed explanation of using CustomSlugField in your Django projects, check out my video tutorial:
 
-[![CustomSlugField Tutorial](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+[![CustomSlugField Tutorial](https://img.youtube.com/vi/YoegQvbgrpA/maxresdefault.jpg)](https://www.youtube.com/watch?v=YoegQvbgrpA)
 
 In this video, you'll learn:
 
@@ -102,6 +102,7 @@ In this video, you'll learn:
 ## 📚 Medium Article
 
 For an extensive overview of CustomSlugField and practical usage tips, explore my Medium article:
+
 [Creating a Custom Slug Field in Django: Implementation and Usage of CustomSlugField](https://medium.com/@jeihunpiriyev/django-da-xüsusi-slug-sahəsi-yaratmaq-customslugfield-in-tətbiqi-və-i̇stifadəsi-c2aeb3461374)
 
 ## 📄 License

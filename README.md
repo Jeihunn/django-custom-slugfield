@@ -14,7 +14,7 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
 
 ## 🛠️ Usage
 
-1. Add the field to your project:
+1. **Add the field to your project**:
     To use the CustomSlugField class provided by the django-custom-slug-field repo, you need to add it to a file in your project. You can name this file anything you like, for example, `services/fields.py`:
 
     ```python
@@ -24,13 +24,12 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
     from django.core import checks
     from django.core.exceptions import FieldDoesNotExist
     from django.utils.text import slugify
-    from django.utils.translation import gettext_lazy as _
 
     class CustomSlugField(models.SlugField):
         # ... (Paste the CustomSlugField class code here)
     ```
 
-2. Use the field in your model:
+2. **Use the field in your model**:
 
     ```python
     from django.db import models
@@ -46,14 +45,14 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
         )
     ```
 
-3. Setting Up in Django Admin:
+3. **Setting Up in Django Admin**:
     To utilize CustomSlugField in the Django admin interface, include it in your `admin.py` file for the respective app. Here’s an example of how you can register `MyModel` with the CustomSlugField in the admin interface:
 
     ```python
     from django.contrib import admin
     from .models import MyModel
 
-    @admin.register(models.MyModel)
+    @admin.register(MyModel)
     class MyModelAdmin(admin.ModelAdmin):
         list_display = ("title", "slug")
         readonly_fields = ("slug",)

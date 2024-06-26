@@ -104,7 +104,7 @@ In this video, you'll learn:
 
 For an extensive overview of CustomSlugField and practical usage tips, explore my Medium article:
 
-[Creating a Custom Slug Field in Django: Implementation and Usage of CustomSlugField](https://medium.com/@jeihunpiriyev/django-da-xüsusi-slug-sahəsi-yaratmaq-customslugfield-in-tətbiqi-və-i̇stifadəsi-c2aeb3461374)
+[Django CustomSlugField: Automatic Slug Generation and Custom Symbol Replacements](https://medium.com/@jeihunpiriyev/django-da-xüsusi-slug-sahəsi-yaratmaq-customslugfield-in-tətbiqi-və-i̇stifadəsi-c2aeb3461374)
 
 ## 📄 License
 

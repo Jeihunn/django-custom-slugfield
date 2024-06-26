@@ -15,6 +15,7 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
 ## 🛠️ Usage
 
 1. **Add the field to your project**:
+
     To use the CustomSlugField class provided by the django-custom-slug-field repo, you need to add it to a file in your project. You can name this file anything you like, for example, `services/fields.py`:
 
     ```python
@@ -46,6 +47,7 @@ By integrating CustomSlugField, you can enhance the usability and SEO performanc
     ```
 
 3. **Setting Up in Django Admin**:
+   
     To utilize CustomSlugField in the Django admin interface, include it in your `admin.py` file for the respective app. Here’s an example of how you can register `MyModel` with the CustomSlugField in the admin interface:
 
     ```python
